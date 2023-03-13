@@ -5,6 +5,9 @@
 *.so
 *.dylib
 
+#my own ignore for credentials file
+*.credentials
+
 # Test binary, built with `go test -c`
 *.test
 

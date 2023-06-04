@@ -8,7 +8,6 @@ import (
 	"log"
 	"os"
 	"strings"
-
 	"github.com/chromedp/chromedp"
 )
 
@@ -53,7 +52,8 @@ func main() {
 		set := sets.Sets[i].Value
 		body := executePageCount(ctx, set)
 		data := []byte(body)
-		ioutil.WriteFile(fmt.Sprintf("%s.json", set), data, 0)
+		os.MkdirAll("carddata", os.ModePerm)
+		ioutil.WriteFile(fmt.Sprintf("carddata/%s.json", set), data, 0)
 	}
 }
 
